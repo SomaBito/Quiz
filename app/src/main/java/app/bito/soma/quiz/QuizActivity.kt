@@ -1,30 +1,35 @@
 package app.bito.soma.quiz
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.ImageView
 import androidx.core.view.isVisible
 import kotlinx.android.synthetic.main.activity_quiz.*
+import kotlinx.android.synthetic.main.activity_quiz.quizText
+import kotlinx.android.synthetic.main.activity_result.*
 import java.awt.font.TextAttribute
 
 
 class QuizActivity : AppCompatActivity() {
 
-    val quizLists: List<List<String>> = listOf(
-        listOf("武田信玄", "明智光秀", "北条氏政","武田信玄"),
-        listOf("織田信長", "石田三成", "井伊直政","石田三成"),
-        listOf("徳川家康", "豊臣秀吉", "毛利輝元","豊臣秀吉"),
-        listOf("真田昌幸", "伊達政宗", "斎藤道三","真田昌幸"),
-        listOf("上杉謙信", "浅井長政", "島津義久","島津義久")
+    val quizLists: List<QuizData> = listOf(
+        QuizData("武田信玄", "明智光秀", "北条氏政","武田信玄", R.drawable.takedakamon),
+        QuizData("織田信長", "石田三成", "井伊直政","石田三成", R.drawable.ishidakamon),
+        QuizData("徳川家康", "豊臣秀吉", "毛利輝元","豊臣秀吉", R.drawable.toyotomikamon),
+        QuizData("真田昌幸", "伊達政宗", "斎藤道三","真田昌幸", R.drawable.sanadakamon),
+        QuizData("上杉謙信", "浅井長政", "島津義久","島津義久", R.drawable.shimazukamon)
     )
 
-    val shuffledLists: List<List<String>> = quizLists.shuffled()
+    val shuffledLists: List<QuizData> = quizLists.shuffled()
 
     var quizCount: Int = 0
 
     var correctAnswer: String = ""
 
     var correctCount: Int = 0
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,6 +53,14 @@ class QuizActivity : AppCompatActivity() {
 
             if ( quizCount == quizLists.size) {
 
+                val resultsIntent: Intent = Intent( this, ResultActivity::class.java)
+
+                resultsIntent.putExtra("QuizCount", quizLists.size)
+
+                resultsIntent.putExtra("CorrectCount", correctCount)
+
+                startActivity(resultsIntent)
+
             }else{
                 judgeImage.isVisible = false
                 nextButton.isVisible = false
@@ -65,17 +78,24 @@ class QuizActivity : AppCompatActivity() {
     }
 
     fun showquestion() {
-        val question: List<String> = shuffledLists[quizCount]
+        val question: QuizData = shuffledLists[quizCount]
 
         Log.d("debug", question.toString())
 
-        answerButton1.text = question[0]
-        answerButton2.text = question[1]
-        answerButton3.text = question[2]
+        answerButton1.text = question.question1
+        answerButton2.text = question.question2
+        answerButton3.text = question.question3
 
-        correctAnswer = question[3]
+        correctAnswer = question.answer
+
+        kamonImage.setImageResource(question.image)
 
         quizText.setText("これは誰の家紋？")
+
+        answerButton1.isVisible = true
+        answerButton2.isVisible = true
+        answerButton3.isVisible = true
+        kamonImage.isVisible = true
     }
 
     fun checkAnswer(answerText: String) {
@@ -84,11 +104,20 @@ class QuizActivity : AppCompatActivity() {
             judgeImage.setImageResource(R.drawable.seikai)
             correctCount++
             quizText.setText("")
+            answerButton1.isVisible = false
+            answerButton2.isVisible = false
+            answerButton3.isVisible = false
+            kamonImage.isVisible = false
 
         } else {
             judgeImage.setImageResource(R.drawable.fuseikai)
             quizText.setText("不正解")
             correctAnswerText.text = "正解は$correctAnswer"
+            answerButton1.isVisible = false
+            answerButton2.isVisible = false
+            answerButton3.isVisible = false
+            kamonImage.isVisible = false
+
         }
         showAnswer()
 
