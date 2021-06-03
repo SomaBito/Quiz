@@ -17,6 +17,13 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+        val quizIntent2: Intent = Intent(this, QuizActivity2::class.java)
+
+        startButton2.setOnClickListener{
+            startActivity(quizIntent2)
+
+        }
+
     }
 
 }
