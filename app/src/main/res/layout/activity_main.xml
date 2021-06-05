@@ -13,8 +13,7 @@
         android:fontFamily="serif"
         android:text="戦国時代"
         android:textColor="#52A6BC"
-        android:textSize="64sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="48sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -25,22 +24,20 @@
         android:fontFamily="serif"
         android:text="QUIZ"
         android:textColor="#877C1F"
-        android:textSize="64sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titleText" />
+        android:textSize="48sp"
+        app:layout_constraintStart_toEndOf="@+id/titleText"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/startButton"
         android:layout_width="380dp"
         android:layout_height="64dp"
-        android:layout_marginBottom="80dp"
         android:backgroundTint="#BF40ED48"
         android:fontFamily="serif"
         android:text="家紋"
         android:textColor="#FFFFFF"
         android:textSize="32sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/startButton2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent" />
@@ -49,7 +46,6 @@
         android:id="@+id/startButton2"
         android:layout_width="380dp"
         android:layout_height="64dp"
-        android:layout_marginBottom="8dp"
         android:backgroundTint="#BF40ED48"
         android:fontFamily="serif"
         android:text="         家紋（難）"
@@ -58,5 +54,57 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/startButton3"
+        android:layout_width="380dp"
+        android:layout_height="64dp"
+        android:backgroundTint="#FFC107"
+        android:fontFamily="serif"
+        android:text="戦　"
+        android:textColor="#FFFFFF"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toTopOf="@+id/startButton4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/startButton4"
+        android:layout_width="380dp"
+        android:layout_height="64dp"
+        android:backgroundTint="#FFC107"
+        android:fontFamily="serif"
+        android:text="　　戦（難）"
+        android:textColor="#FFFFFF"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toTopOf="@+id/startButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/startButton5"
+        android:layout_width="380dp"
+        android:layout_height="64dp"
+        android:backgroundTint="#03A9F4"
+        android:fontFamily="serif"
+        android:text="武将"
+        android:textColor="#FFFFFF"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toTopOf="@+id/startButton6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/startButton6"
+        android:layout_width="380dp"
+        android:layout_height="64dp"
+        android:backgroundTint="#03A9F4"
+        android:fontFamily="serif"
+        android:text="　　　武将（難）"
+        android:textColor="#FFFFFF"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toTopOf="@+id/startButton3"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
