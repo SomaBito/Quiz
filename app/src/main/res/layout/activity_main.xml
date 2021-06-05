@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/kamonichiran"
     tools:context=".MainActivity">
 
     <TextView
@@ -60,7 +61,7 @@
         android:id="@+id/startButton3"
         android:layout_width="380dp"
         android:layout_height="64dp"
-        android:backgroundTint="#FFC107"
+        android:backgroundTint="#BFFFC107"
         android:fontFamily="serif"
         android:text="戦　"
         android:textColor="#FFFFFF"
@@ -73,7 +74,7 @@
         android:id="@+id/startButton4"
         android:layout_width="380dp"
         android:layout_height="64dp"
-        android:backgroundTint="#FFC107"
+        android:backgroundTint="#BFFFC107"
         android:fontFamily="serif"
         android:text="　　戦（難）"
         android:textColor="#FFFFFF"
@@ -86,7 +87,7 @@
         android:id="@+id/startButton5"
         android:layout_width="380dp"
         android:layout_height="64dp"
-        android:backgroundTint="#03A9F4"
+        android:backgroundTint="#BF03A9F4"
         android:fontFamily="serif"
         android:text="武将"
         android:textColor="#FFFFFF"
@@ -99,7 +100,7 @@
         android:id="@+id/startButton6"
         android:layout_width="380dp"
         android:layout_height="64dp"
-        android:backgroundTint="#03A9F4"
+        android:backgroundTint="#BF03A9F4"
         android:fontFamily="serif"
         android:text="　　　武将（難）"
         android:textColor="#FFFFFF"
