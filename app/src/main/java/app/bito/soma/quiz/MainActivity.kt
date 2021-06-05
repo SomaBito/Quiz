@@ -31,6 +31,27 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+        val quizIntent4: Intent = Intent(this, QuizActivity4::class.java)
+
+        startButton4.setOnClickListener{
+            startActivity(quizIntent4)
+
+        }
+
+        val quizIntent5: Intent = Intent(this, QuizActivity5::class.java)
+
+        startButton5.setOnClickListener{
+            startActivity(quizIntent5)
+
+        }
+
+        val quizIntent6: Intent = Intent(this, QuizActivity6::class.java)
+
+        startButton6.setOnClickListener{
+            startActivity(quizIntent6)
+
+        }
+
 
 
     }

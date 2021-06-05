@@ -15,14 +15,14 @@ import kotlinx.android.synthetic.main.activity_quiz.nextButton
 import kotlinx.android.synthetic.main.activity_quiz.quizText
 import kotlinx.android.synthetic.main.activity_quiz3.*
 
-class QuizActivity3 : AppCompatActivity() {
+class QuizActivity5 : AppCompatActivity() {
 
     val quizLists: List<List<String>> = listOf(
-        listOf("1553~1564年","上杉謙信vs武田信玄","川中島の戦い","姉川の戦い","石山合戦","川中島の戦い"),
-        listOf("1560年","織田信長vs今川義元","備中高松城の戦い","桶狭間の戦い","山崎の戦い","桶狭間の戦い"),
-        listOf("1573年","浅井長政vs織田信長","小谷城の戦い","姉川の戦い","長良川の戦い","小谷城の戦い"),
-        listOf("1590年","豊臣秀吉vs北条氏政","伏見城の戦い","小田原攻め","九州攻め","小田原攻め"),
-        listOf("1582年","明智光秀vs織田信長","長篠の戦い","上田合戦","本能寺の変","本能寺の変")
+        listOf("1497~1571年","安芸出身（広島）","毛利輝元","毛利隆元","毛利元就","毛利元就"),
+        listOf("1519~1560年","駿河出身（静岡）","石田三成","今川義元","小早川秀秋","今川義元"),
+        listOf("1538~1599年","尾張出身（愛知）","織田信長","前田利家","本多忠勝","前田利家"),
+        listOf("1547~1611年","信濃出身（長野）","真田信之","真田幸村","真田昌幸","真田昌幸"),
+        listOf("1561~1602年","遠江出身（静岡）","井伊直政","柴田勝家","伊達政宗","井伊直政")
     )
 
     val shuffledLists: List<List<String>> = quizLists.shuffled()
@@ -34,7 +34,7 @@ class QuizActivity3 : AppCompatActivity() {
     var correctCount: Int = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_quiz3)
+        setContentView(R.layout.activity_quiz4)
 
         showquestion()
 
@@ -54,13 +54,13 @@ class QuizActivity3 : AppCompatActivity() {
 
             if ( quizCount == quizLists.size) {
 
-                val resultsIntent3: Intent = Intent( this, ResultActivity3::class.java)
+                val resultsIntent5: Intent = Intent( this, ResultActivity5::class.java)
 
-                resultsIntent3.putExtra("QuizCount", quizLists.size)
+                resultsIntent5.putExtra("QuizCount", quizLists.size)
 
-                resultsIntent3.putExtra("CorrectCount", correctCount)
+                resultsIntent5.putExtra("CorrectCount", correctCount)
 
-                startActivity(resultsIntent3)
+                startActivity(resultsIntent5)
 
             }else{
                 judgeImage.isVisible = false

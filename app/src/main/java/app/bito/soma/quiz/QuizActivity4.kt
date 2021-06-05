@@ -15,14 +15,14 @@ import kotlinx.android.synthetic.main.activity_quiz.nextButton
 import kotlinx.android.synthetic.main.activity_quiz.quizText
 import kotlinx.android.synthetic.main.activity_quiz3.*
 
-class QuizActivity3 : AppCompatActivity() {
+class QuizActivity4 : AppCompatActivity() {
 
     val quizLists: List<List<String>> = listOf(
-        listOf("1553~1564年","上杉謙信vs武田信玄","川中島の戦い","姉川の戦い","石山合戦","川中島の戦い"),
-        listOf("1560年","織田信長vs今川義元","備中高松城の戦い","桶狭間の戦い","山崎の戦い","桶狭間の戦い"),
-        listOf("1573年","浅井長政vs織田信長","小谷城の戦い","姉川の戦い","長良川の戦い","小谷城の戦い"),
-        listOf("1590年","豊臣秀吉vs北条氏政","伏見城の戦い","小田原攻め","九州攻め","小田原攻め"),
-        listOf("1582年","明智光秀vs織田信長","長篠の戦い","上田合戦","本能寺の変","本能寺の変")
+        listOf("1578~1580年","別所長治vs羽柴秀吉","四万十川の戦い","三木城の戦い","今山の戦い","三木城の戦い"),
+        listOf("1572年","徳川家康vs武田信玄","三方ヶ原の戦い","三増峠の戦い","高遠城の戦い","三方ヶ原の戦い"),
+        listOf("1560~1570年","上杉謙信vs北条氏康","摺上原の戦い","長谷堂城の戦い","唐沢山城の戦い","唐沢山城の戦い"),
+        listOf("1584年","島津義久vs龍造寺隆信","賤ヶ岳の戦い","沖田畷の戦い","耳川の戦い","沖田畷の戦い"),
+        listOf("1585年","佐竹義重vs伊達政宗","人取橋の戦い","七尾城の戦い","厳島の戦い","人取橋の戦い")
     )
 
     val shuffledLists: List<List<String>> = quizLists.shuffled()
@@ -34,7 +34,7 @@ class QuizActivity3 : AppCompatActivity() {
     var correctCount: Int = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_quiz3)
+        setContentView(R.layout.activity_quiz4)
 
         showquestion()
 
@@ -54,13 +54,13 @@ class QuizActivity3 : AppCompatActivity() {
 
             if ( quizCount == quizLists.size) {
 
-                val resultsIntent3: Intent = Intent( this, ResultActivity3::class.java)
+                val resultsIntent4: Intent = Intent( this, ResultActivity4::class.java)
 
-                resultsIntent3.putExtra("QuizCount", quizLists.size)
+                resultsIntent4.putExtra("QuizCount", quizLists.size)
 
-                resultsIntent3.putExtra("CorrectCount", correctCount)
+                resultsIntent4.putExtra("CorrectCount", correctCount)
 
-                startActivity(resultsIntent3)
+                startActivity(resultsIntent4)
 
             }else{
                 judgeImage.isVisible = false
@@ -149,5 +149,4 @@ class QuizActivity3 : AppCompatActivity() {
 
     }
 }
-
 
