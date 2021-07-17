@@ -92,6 +92,7 @@ class QuizActivity3 : AppCompatActivity() {
                 resultsIntent3.putExtra("CorrectCount", correctCount)
 
                 startActivity(resultsIntent3)
+                finish()
 
             }else{
                 judgeImage.isVisible = false

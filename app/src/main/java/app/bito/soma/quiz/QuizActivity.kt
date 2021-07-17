@@ -134,7 +134,12 @@ class QuizActivity : AppCompatActivity() {
 
         correctAnswer = question.answer
 
-        kamonImage.setImageResource(question.image)
+        if(question.image != null) {
+            kamonImage.isVisible = true
+            kamonImage.setImageResource(question.image)
+        }else{
+            kamonImage.isVisible = false
+        }
 
         quizText.setText("これは誰の家紋？")
 

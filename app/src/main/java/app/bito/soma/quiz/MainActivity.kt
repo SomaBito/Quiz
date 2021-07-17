@@ -10,9 +10,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val quizIntent: Intent = Intent(this, QuizActivity::class.java)
+        val quizIntent: Intent = Intent(this, AllQuizActivity::class.java)
 
         startButton.setOnClickListener{
+            quizIntent.putExtra("Key", "kamon")
            startActivity(quizIntent)
             finish()
 
@@ -21,7 +22,7 @@ class MainActivity : AppCompatActivity() {
         val quizIntent2: Intent = Intent(this, QuizActivity2::class.java)
 
         startButton2.setOnClickListener{
-            startActivity(quizIntent2)
+            startActivity(quizIntent)
             finish()
 
         }

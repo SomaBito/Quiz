@@ -45,11 +45,13 @@ class ResultActivity3 : AppCompatActivity() {
         againButton.setOnClickListener {
             val quizIntent3: Intent = Intent(this, QuizActivity3::class.java)
             startActivity(quizIntent3)
+            finish()
         }
 
         homeButton.setOnClickListener {
             val mainIntent: Intent = Intent(this, MainActivity::class.java)
             startActivity(mainIntent)
+            finish()
         }
     }
 }
