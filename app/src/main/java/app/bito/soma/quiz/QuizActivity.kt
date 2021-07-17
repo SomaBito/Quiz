@@ -3,13 +3,22 @@ package app.bito.soma.quiz
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.CountDownTimer
 import android.util.Log
 import android.widget.ImageView
 import androidx.core.view.isVisible
 import kotlinx.android.synthetic.main.activity_quiz.*
+import kotlinx.android.synthetic.main.activity_quiz.answerButton1
+import kotlinx.android.synthetic.main.activity_quiz.answerButton2
+import kotlinx.android.synthetic.main.activity_quiz.answerButton3
+import kotlinx.android.synthetic.main.activity_quiz.correctAnswerText
+import kotlinx.android.synthetic.main.activity_quiz.judgeImage
+import kotlinx.android.synthetic.main.activity_quiz.nextButton
 import kotlinx.android.synthetic.main.activity_quiz.quizText
+import kotlinx.android.synthetic.main.activity_quiz6.*
 import kotlinx.android.synthetic.main.activity_result.*
 import java.awt.font.TextAttribute
+import kotlinx.android.synthetic.main.activity_quiz6.secondText as secondText1
 
 
 class QuizActivity : AppCompatActivity() {
@@ -30,6 +39,33 @@ class QuizActivity : AppCompatActivity() {
 
     var correctCount: Int = 0
 
+    var second = 6
+
+    val timer : CountDownTimer = object : CountDownTimer(5000,1000){
+
+        override fun onFinish() {
+            secondText.text = second.toString()
+            judgeImage.setImageResource(R.drawable.fuseikai)
+            quizText.setText("不正解")
+            correctAnswerText.text = "正解は$correctAnswer"
+            answerButton1.isVisible = false
+            answerButton2.isVisible = false
+            answerButton3.isVisible = false
+            kamonImage.isVisible = false
+
+            showAnswer()
+
+            quizCount++
+
+            second = 6
+        }
+
+        override fun onTick(millisUntilFinished: Long) {
+            second = second - 1
+            secondText.text = second.toString()
+        }
+    }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,15 +75,20 @@ class QuizActivity : AppCompatActivity() {
 
         answerButton1.setOnClickListener {
             checkAnswer(answerButton1.text.toString())
+
         }
 
         answerButton2.setOnClickListener {
             checkAnswer(answerButton2.text.toString())
+
         }
 
         answerButton3.setOnClickListener {
             checkAnswer(answerButton3.text.toString())
+
         }
+
+
 
         nextButton.setOnClickListener {
 
@@ -75,6 +116,7 @@ class QuizActivity : AppCompatActivity() {
 
             }
         }
+
     }
 
     fun showquestion() {
@@ -96,9 +138,16 @@ class QuizActivity : AppCompatActivity() {
         answerButton2.isVisible = true
         answerButton3.isVisible = true
         kamonImage.isVisible = true
+
+        secondText.text = second.toString()
+        second = 6
+
+        timer.start()
+
     }
 
     fun checkAnswer(answerText: String) {
+        timer.cancel()
 
         if (answerText == correctAnswer) {
             judgeImage.setImageResource(R.drawable.seikai)
@@ -108,6 +157,7 @@ class QuizActivity : AppCompatActivity() {
             answerButton2.isVisible = false
             answerButton3.isVisible = false
             kamonImage.isVisible = false
+            secondText.isVisible = false
 
         } else {
             judgeImage.setImageResource(R.drawable.fuseikai)
@@ -117,6 +167,7 @@ class QuizActivity : AppCompatActivity() {
             answerButton2.isVisible = false
             answerButton3.isVisible = false
             kamonImage.isVisible = false
+            secondText.isVisible = false
 
         }
         showAnswer()
@@ -137,5 +188,18 @@ class QuizActivity : AppCompatActivity() {
         answerButton3.isEnabled = false
 
 
-    }
-}
+    }}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

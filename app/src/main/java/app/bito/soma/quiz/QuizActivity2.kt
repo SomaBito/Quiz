@@ -3,6 +3,7 @@ package app.bito.soma.quiz
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.CountDownTimer
 import android.util.Log
 import androidx.core.view.isVisible
 import kotlinx.android.synthetic.main.activity_quiz.*
@@ -25,10 +26,34 @@ class QuizActivity2 : AppCompatActivity() {
 
     var correctCount: Int = 0
 
+    var second = 6
 
+    val timer : CountDownTimer = object : CountDownTimer(10000,1000){
 
+        override fun onFinish() {
+            secondText.text = second.toString()
+            judgeImage.setImageResource(R.drawable.fuseikai)
+            quizText.setText("不正解")
+            correctAnswerText.text = "正解は$correctAnswer"
+            answerButton1.isVisible = false
+            answerButton2.isVisible = false
+            answerButton3.isVisible = false
+            kamonImage.isVisible = false
 
-        override fun onCreate(savedInstanceState: Bundle?) {
+            showAnswer()
+
+            quizCount++
+
+            second = 6
+        }
+
+        override fun onTick(millisUntilFinished: Long) {
+            second = second - 1
+            secondText.text = second.toString()
+        }
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
             super.onCreate(savedInstanceState)
             setContentView(R.layout.activity_quiz)
 
@@ -93,9 +118,14 @@ class QuizActivity2 : AppCompatActivity() {
             answerButton2.isVisible = true
             answerButton3.isVisible = true
             kamonImage.isVisible = true
+
+            secondText.text = second.toString()
+            second = 6
+            timer.start()
         }
 
         fun checkAnswer(answerText: String) {
+            timer.cancel()
 
             if (answerText == correctAnswer) {
                 judgeImage.setImageResource(R.drawable.seikai)

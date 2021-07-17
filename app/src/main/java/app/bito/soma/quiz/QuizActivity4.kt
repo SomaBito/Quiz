@@ -3,6 +3,7 @@ package app.bito.soma.quiz
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.CountDownTimer
 import android.util.Log
 import androidx.core.view.isVisible
 import kotlinx.android.synthetic.main.activity_quiz.*
@@ -14,6 +15,7 @@ import kotlinx.android.synthetic.main.activity_quiz.judgeImage
 import kotlinx.android.synthetic.main.activity_quiz.nextButton
 import kotlinx.android.synthetic.main.activity_quiz.quizText
 import kotlinx.android.synthetic.main.activity_quiz3.*
+import kotlinx.android.synthetic.main.activity_quiz.secondText as secondText1
 
 class QuizActivity4 : AppCompatActivity() {
 
@@ -32,6 +34,33 @@ class QuizActivity4 : AppCompatActivity() {
     var correctAnswer: String = ""
 
     var correctCount: Int = 0
+
+    var second = 6
+
+    val timer : CountDownTimer = object : CountDownTimer(10000,1000){
+
+        override fun onFinish() {
+            secondText.text = second.toString()
+            judgeImage.setImageResource(R.drawable.fuseikai)
+            quizText.setText("不正解")
+            correctAnswerText.text = "正解は$correctAnswer"
+            answerButton1.isVisible = false
+            answerButton2.isVisible = false
+            answerButton3.isVisible = false
+
+
+            showAnswer()
+
+            quizCount++
+
+            second = 6
+        }
+
+        override fun onTick(millisUntilFinished: Long) {
+            second = second - 1
+            secondText.text = second.toString()
+        }
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_quiz4)
@@ -103,9 +132,14 @@ class QuizActivity4 : AppCompatActivity() {
 
         textView.isVisible = true
         textView2.isVisible = true
+
+        secondText.text = second.toString()
+        second = 6
+        timer.start()
     }
 
     fun checkAnswer(answerText: String) {
+        timer.cancel()
 
         if (answerText == correctAnswer) {
             judgeImage.setImageResource(R.drawable.seikai)
