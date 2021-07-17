@@ -33,7 +33,7 @@
     <Button
         android:id="@+id/startButton"
         android:layout_width="380dp"
-        android:layout_height="80sp"
+        android:layout_height="72sp"
         android:backgroundTint="#BF40ED48"
         android:fontFamily="serif"
         android:text="家紋"
@@ -47,7 +47,7 @@
     <Button
         android:id="@+id/startButton2"
         android:layout_width="380dp"
-        android:layout_height="80sp"
+        android:layout_height="72sp"
         android:backgroundTint="#BF40ED48"
         android:fontFamily="serif"
         android:text="家紋（難）"
@@ -61,7 +61,7 @@
     <Button
         android:id="@+id/startButton3"
         android:layout_width="380dp"
-        android:layout_height="80sp"
+        android:layout_height="72sp"
         android:backgroundTint="#BFFFC107"
         android:fontFamily="serif"
         android:text="戦　"
@@ -74,7 +74,7 @@
     <Button
         android:id="@+id/startButton4"
         android:layout_width="380dp"
-        android:layout_height="80sp"
+        android:layout_height="72sp"
         android:backgroundTint="#BFFFC107"
         android:fontFamily="serif"
         android:text="戦（難）"
@@ -87,7 +87,7 @@
     <Button
         android:id="@+id/startButton5"
         android:layout_width="380dp"
-        android:layout_height="80sp"
+        android:layout_height="72sp"
         android:backgroundTint="#BF03A9F4"
         android:fontFamily="serif"
         android:text="武将"
@@ -100,7 +100,7 @@
     <Button
         android:id="@+id/startButton6"
         android:layout_width="380dp"
-        android:layout_height="80sp"
+        android:layout_height="72sp"
         android:backgroundTint="#BF03A9F4"
         android:fontFamily="serif"
         android:text="武将（難）"
