@@ -26,7 +26,7 @@ class QuizActivity2 : AppCompatActivity() {
 
     var correctCount: Int = 0
 
-    var second = 6
+    var second = 5
 
     val timer : CountDownTimer = object : CountDownTimer(5000,1000){
 
@@ -100,6 +100,8 @@ class QuizActivity2 : AppCompatActivity() {
         }
 
         fun showquestion() {
+
+            secondText.isVisible = true
             val question: QuizData = shuffledLists[quizCount]
 
             Log.d("debug", question.toString())

@@ -35,19 +35,21 @@ class QuizActivity3 : AppCompatActivity() {
 
     var correctCount: Int = 0
 
-    var second = 6
+    var second = 5
 
     val timer : CountDownTimer = object : CountDownTimer(5000,1000){
 
         override fun onFinish() {
             secondText.text = second.toString()
             judgeImage.setImageResource(R.drawable.fuseikai)
+            quizText.isVisible = true
             quizText.setText("不正解")
             correctAnswerText.text = "正解は$correctAnswer"
             answerButton1.isVisible = false
             answerButton2.isVisible = false
             answerButton3.isVisible = false
-            kamonImage.isVisible = false
+            textView.isVisible = false
+            textView2.isVisible = false
 
             showAnswer()
 
@@ -111,6 +113,8 @@ class QuizActivity3 : AppCompatActivity() {
     }
 
     fun showquestion() {
+
+        secondText.isVisible = true
         val question: List<String> = shuffledLists[quizCount]
 
         Log.d("debug", question.toString())
