@@ -18,6 +18,31 @@ class ResultActivity : AppCompatActivity() {
 
         correctCountText.text = correctCount.toString()
 
+        homekotoba.text = when (correctCount) {
+            0 -> {
+                "頑張ろう！"
+            }
+            1 -> {
+                "まだまだ!"
+            }
+            2 -> {
+                 "頑張って！"
+            }
+            3 -> {
+                "すごいね！"
+            }
+            4 -> {
+                "さすが！"
+            }
+            5 -> {
+                "天才！"
+            }
+            else ->{
+                ""
+            }
+        }
+
+
         againButton.setOnClickListener {
             val quizIntent: Intent = Intent(this, QuizActivity::class.java)
             startActivity(quizIntent)
@@ -27,5 +52,7 @@ class ResultActivity : AppCompatActivity() {
             val mainIntent: Intent = Intent(this, MainActivity::class.java)
             startActivity(mainIntent)
         }
+
+
     }
 }
