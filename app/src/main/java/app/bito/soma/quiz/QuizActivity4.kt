@@ -37,7 +37,7 @@ class QuizActivity4 : AppCompatActivity() {
 
     var second = 6
 
-    val timer : CountDownTimer = object : CountDownTimer(10000,1000){
+    val timer : CountDownTimer = object : CountDownTimer(5000,1000){
 
         override fun onFinish() {
             secondText.text = second.toString()
