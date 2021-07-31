@@ -10,13 +10,12 @@
         android:id="@+id/quizText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24sp"
         android:text="これは誰の家紋？"
         android:textColor="#673AB7"
-        android:textSize="18sp"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/correctAnswerText" />
 
     <TextView
         android:id="@+id/correctAnswerText"
@@ -27,6 +26,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 
     <TextView
         android:id="@+id/secondText"
@@ -42,52 +42,50 @@
         android:id="@+id/answerButton1"
         android:layout_width="0dp"
         android:layout_height="80sp"
-        android:layout_marginStart="40sp"
-        android:layout_marginTop="28sp"
-        android:layout_marginEnd="40sp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
         android:backgroundTint="#1982DC"
         android:text="Button"
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/answerButton2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/kamonImage" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/answerButton2"
         android:layout_width="0dp"
         android:layout_height="80sp"
-        android:layout_marginStart="40sp"
-        android:layout_marginTop="8sp"
-        android:layout_marginEnd="40sp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
         android:backgroundTint="#1982DC"
         android:text="Button"
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/answerButton3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/answerButton1" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/answerButton3"
         android:layout_width="0dp"
         android:layout_height="80sp"
-        android:layout_marginStart="40sp"
-        android:layout_marginTop="8sp"
-        android:layout_marginEnd="40sp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="16dp"
         android:backgroundTint="#1982DC"
         android:text="Button"
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/answerButton2" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/nextButton"
@@ -107,9 +105,9 @@
 
     <ImageView
         android:id="@+id/judgeImage"
-        android:layout_width="200sp"
-        android:layout_height="200sp"
-        android:layout_marginTop="44dp"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="64dp"
         android:scaleType="centerInside"
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
@@ -119,9 +117,11 @@
 
     <ImageView
         android:id="@+id/kamonImage"
-        android:layout_width="150sp"
-        android:layout_height="150sp"
-        android:layout_marginTop="8sp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/answerButton1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/quizText"
