@@ -3,6 +3,7 @@ package app.bito.soma.quiz
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import kotlinx.android.synthetic.main.activity_result.*
 
 class ResultActivity : AppCompatActivity() {
@@ -45,7 +46,9 @@ class ResultActivity : AppCompatActivity() {
 
         againButton.setOnClickListener {
             val quizIntent: Intent = Intent(this, AllQuizActivity::class.java)
-            quizIntent.putExtra("key", intent.getStringExtra("key"))
+            val key = intent.getStringExtra("key")
+            Log.d("key", "$key")
+            quizIntent.putExtra("key", key)
             startActivity(quizIntent)
             finish()
         }

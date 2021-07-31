@@ -1,12 +1,15 @@
 package app.bito.soma.quiz
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.util.Log
 import android.view.View
 import androidx.core.view.isVisible
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_quiz.*
 
 class AllQuizActivity : AppCompatActivity() {
@@ -54,35 +57,32 @@ class AllQuizActivity : AppCompatActivity() {
 
         key = intent.getStringExtra("key")
 
-        actionBar?.title = when(key){
+
+        when(key){
             "kamon" ->{
                 shuffledLists = QuizLists1.shuffled()
-                "家紋"
+                title = "家紋"
             }
             "kamon2" ->{
                 shuffledLists = QuizLists2.shuffled()
-                "家紋（難）"
+                title = "家紋（難）"
             }
             "ikusa" ->{
                 shuffledLists = QuizLists3.shuffled()
-                "戦"
+                title = "戦"
             }
             "ikusa2" ->{
                 shuffledLists = QuizLists4.shuffled()
-                "戦（難）"
+                title = "戦（難）"
             }
             "bushou" ->{
                 shuffledLists = QuizLists5.shuffled()
-                "武将"
+                title = "武将"
             }
             "bushou2" ->{
                 shuffledLists = QuizLists6.shuffled()
-                "武将（難）"
+                title = "武将（難）"
             }
-            else ->{
-                ""
-            }
-
 
         }
 
@@ -115,6 +115,8 @@ class AllQuizActivity : AppCompatActivity() {
 
                 resultsIntent.putExtra("CorrectCount", correctCount)
 
+                resultsIntent.putExtra("key", key)
+
                 startActivity(resultsIntent)
                 finish()
 
@@ -138,6 +140,11 @@ class AllQuizActivity : AppCompatActivity() {
     fun showquestion() {
 
         secondText.isVisible = true
+
+        if(shuffledLists == null){
+            Log.d("suffledLists", "null")
+            return
+        }
 
         val question: QuizData = shuffledLists?.get(quizCount)!!
 
@@ -172,6 +179,10 @@ class AllQuizActivity : AppCompatActivity() {
     fun checkAnswer(answerText: String) {
         timer.cancel()
 
+        val datastore = getSharedPreferences("DataStore", Context.MODE_PRIVATE)
+        var seikaiCount = datastore.getInt("seikaiCount", 0)
+
+
         if (answerText == correctAnswer) {
             judgeImage.setImageResource(R.drawable.seikai)
             correctCount++
@@ -182,6 +193,10 @@ class AllQuizActivity : AppCompatActivity() {
             kamonImage.visibility = View.INVISIBLE
             secondText.isVisible = false
 
+
+            seikaiCount = seikaiCount + 1
+
+
         } else {
             judgeImage.setImageResource(R.drawable.fuseikai)
             quizText.setText("不正解")
@@ -191,9 +206,16 @@ class AllQuizActivity : AppCompatActivity() {
             answerButton3.isVisible = false
             kamonImage.visibility = View.INVISIBLE
             secondText.isVisible = false
+            seikaiCount = 0
 
         }
         showAnswer()
+
+        val editor = datastore.edit()
+        editor.putInt("seikaiCount",seikaiCount)
+        //if文使う
+        //editor.putInt("saikoCount",seikaiCount)
+        editor.apply()
 
         quizCount++
     }
