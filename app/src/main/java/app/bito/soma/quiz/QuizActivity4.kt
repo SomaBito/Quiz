@@ -139,7 +139,7 @@ class QuizActivity4 : AppCompatActivity() {
         textView2.isVisible = true
 
         secondText.text = second.toString()
-        second = 6
+        second = 5
         timer.start()
     }
 

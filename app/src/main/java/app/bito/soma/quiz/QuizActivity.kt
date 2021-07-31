@@ -20,7 +20,6 @@ import kotlinx.android.synthetic.main.activity_result.*
 import java.awt.font.TextAttribute
 import kotlinx.android.synthetic.main.activity_quiz6.secondText as secondText1
 
-
 class QuizActivity : AppCompatActivity() {
 
     val quizLists: List<QuizData> = listOf(
@@ -149,7 +148,7 @@ class QuizActivity : AppCompatActivity() {
         kamonImage.isVisible = true
 
         secondText.text = second.toString()
-        second = 6
+        second = 5
 
         timer.start()
 

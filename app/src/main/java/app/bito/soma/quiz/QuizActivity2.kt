@@ -128,7 +128,7 @@ class QuizActivity2 : AppCompatActivity() {
             kamonImage.isVisible = true
 
             secondText.text = second.toString()
-            second = 6
+            second = 5
             timer.start()
         }
 

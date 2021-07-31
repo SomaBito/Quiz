@@ -51,7 +51,6 @@ class QuizActivity5 : AppCompatActivity() {
             textView.isVisible = false
             textView2.isVisible = false
 
-
             showAnswer()
 
             quizCount++
@@ -140,7 +139,7 @@ class QuizActivity5 : AppCompatActivity() {
         textView2.isVisible = true
 
         secondText.text = second.toString()
-        second = 6
+        second = 5
         timer.start()
 
     }

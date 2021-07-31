@@ -15,15 +15,13 @@ class MainActivity : AppCompatActivity() {
         startButton.setOnClickListener{
             quizIntent.putExtra("Key", "kamon")
            startActivity(quizIntent)
-            finish()
 
         }
 
         val quizIntent2: Intent = Intent(this, QuizActivity2::class.java)
 
         startButton2.setOnClickListener{
-            startActivity(quizIntent)
-            finish()
+            startActivity(quizIntent2)
 
         }
 
@@ -31,7 +29,6 @@ class MainActivity : AppCompatActivity() {
 
         startButton3.setOnClickListener{
             startActivity(quizIntent3)
-            finish()
 
         }
 
@@ -39,7 +36,6 @@ class MainActivity : AppCompatActivity() {
 
         startButton4.setOnClickListener{
             startActivity(quizIntent4)
-            finish()
 
         }
 
@@ -47,7 +43,6 @@ class MainActivity : AppCompatActivity() {
 
         startButton5.setOnClickListener{
             startActivity(quizIntent5)
-            finish()
 
         }
 
@@ -55,7 +50,6 @@ class MainActivity : AppCompatActivity() {
 
         startButton6.setOnClickListener{
             startActivity(quizIntent6)
-            finish()
 
         }
 
