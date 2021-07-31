@@ -44,7 +44,8 @@ class ResultActivity : AppCompatActivity() {
 
 
         againButton.setOnClickListener {
-            val quizIntent: Intent = Intent(this, QuizActivity::class.java)
+            val quizIntent: Intent = Intent(this, AllQuizActivity::class.java)
+            quizIntent.putExtra("key", intent.getStringExtra("key"))
             startActivity(quizIntent)
             finish()
         }

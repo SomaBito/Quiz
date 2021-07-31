@@ -1,20 +1,20 @@
 package app.bito.soma.quiz
 
 val QuizLists1: List<QuizData> = listOf(
-    QuizData("", "武田信玄", "明智光秀", "北条氏政","武田信玄", R.drawable.takedakamon),
-    QuizData("", "織田信長", "石田三成", "井伊直政","石田三成", R.drawable.ishidakamon),
-    QuizData("", "徳川家康", "豊臣秀吉", "毛利輝元","豊臣秀吉", R.drawable.toyotomikamon),
-    QuizData("", "真田昌幸", "伊達政宗", "斎藤道三","真田昌幸", R.drawable.sanadakamon),
-    QuizData("", "上杉謙信", "浅井長政", "島津義久","島津義久", R.drawable.shimazukamon)
+    QuizData("これは誰の家紋？", "武田信玄", "明智光秀", "北条氏政","武田信玄", R.drawable.takedakamon),
+    QuizData("これは誰の家紋？", "織田信長", "石田三成", "井伊直政","石田三成", R.drawable.ishidakamon),
+    QuizData("これは誰の家紋？", "徳川家康", "豊臣秀吉", "毛利輝元","豊臣秀吉", R.drawable.toyotomikamon),
+    QuizData("これは誰の家紋？", "真田昌幸", "伊達政宗", "斎藤道三","真田昌幸", R.drawable.sanadakamon),
+    QuizData("これは誰の家紋？", "上杉謙信", "浅井長政", "島津義久","島津義久", R.drawable.shimazukamon)
 )
 
 
 val QuizLists2: List<QuizData> = listOf(
-    QuizData("", "龍造寺隆信","細川忠興","鳥居元忠","龍造寺隆信", R.drawable.ryuuzoujikamon),
-    QuizData("", "九鬼嘉隆","清水宗治","前田利家","前田利家",R.drawable.maedakamon),
-    QuizData("", "柴田勝家","上杉謙信","大友宗麟","柴田勝家",R.drawable.shibatakamon),
-    QuizData("", "今川義元","池田恒興","加藤清正","池田恒興",R.drawable.ikedakamon),
-    QuizData("", "小西行長","京極高次","毛利輝元","毛利輝元",R.drawable.mourikamon)
+    QuizData("これは誰の家紋？", "龍造寺隆信","細川忠興","鳥居元忠","龍造寺隆信", R.drawable.ryuuzoujikamon),
+    QuizData("これは誰の家紋？", "九鬼嘉隆","清水宗治","前田利家","前田利家",R.drawable.maedakamon),
+    QuizData("これは誰の家紋？", "柴田勝家","上杉謙信","大友宗麟","柴田勝家",R.drawable.shibatakamon),
+    QuizData("これは誰の家紋？", "今川義元","池田恒興","加藤清正","池田恒興",R.drawable.ikedakamon),
+    QuizData("これは誰の家紋？", "小西行長","京極高次","毛利輝元","毛利輝元",R.drawable.mourikamon)
 )
 
 
