@@ -33,8 +33,7 @@ class AllQuizActivity : AppCompatActivity() {
             answerButton1.isVisible = false
             answerButton2.isVisible = false
             answerButton3.isVisible = false
-            kamonImage.visibility = View.INVISIBLE
-            kamonImage.visibility = View.VISIBLE
+            kamonImage.visibility = View.GONE
 
             showAnswer()
 
@@ -55,25 +54,33 @@ class AllQuizActivity : AppCompatActivity() {
 
         key = intent.getStringExtra("key")
 
-        when(key){
+        actionBar?.title = when(key){
             "kamon" ->{
                 shuffledLists = QuizLists1.shuffled()
-
+                "家紋"
             }
             "kamon2" ->{
                 shuffledLists = QuizLists2.shuffled()
+                "家紋（難）"
             }
             "ikusa" ->{
                 shuffledLists = QuizLists3.shuffled()
+                "戦"
             }
             "ikusa2" ->{
                 shuffledLists = QuizLists4.shuffled()
+                "戦（難）"
             }
             "bushou" ->{
                 shuffledLists = QuizLists5.shuffled()
+                "武将"
             }
             "bushou2" ->{
                 shuffledLists = QuizLists6.shuffled()
+                "武将（難）"
+            }
+            else ->{
+                ""
             }
 
 
