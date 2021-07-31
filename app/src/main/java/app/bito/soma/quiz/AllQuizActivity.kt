@@ -24,7 +24,25 @@ class AllQuizActivity : AppCompatActivity() {
             "kamon" ->{
                 shuffledLists = QuizLists1.shuffled()
             }
+            "kamon2" ->{
+                shuffledLists = QuizLists2.shuffled()
+            }
+            "ikusa" ->{
+                shuffledLists = QuizLists3.shuffled()
+            }
+            "ikusa2" ->{
+                shuffledLists = QuizLists4.shuffled()
+            }
+            "bushou" ->{
+                shuffledLists = QuizLists5.shuffled()
+            }
+            "bushou2" ->{
+                shuffledLists = QuizLists6.shuffled()
+            }
+
 
         }
+
+
     }
 }

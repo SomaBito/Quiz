@@ -11,11 +11,11 @@ import kotlinx.android.synthetic.main.activity_quiz.*
 class QuizActivity2 : AppCompatActivity() {
 
     val quizLists: List<QuizData> = listOf(
-        QuizData("龍造寺隆信","細川忠興","鳥居元忠","龍造寺隆信", R.drawable.ryuuzoujikamon),
-        QuizData("九鬼嘉隆","清水宗治","前田利家","前田利家",R.drawable.maedakamon),
-        QuizData("柴田勝家","上杉謙信","大友宗麟","柴田勝家",R.drawable.shibatakamon),
-        QuizData("今川義元","池田恒興","加藤清正","池田恒興",R.drawable.ikedakamon),
-        QuizData("小西行長","京極高次","毛利輝元","毛利輝元",R.drawable.mourikamon)
+        QuizData("","龍造寺隆信","細川忠興","鳥居元忠","龍造寺隆信", R.drawable.ryuuzoujikamon),
+        QuizData("","九鬼嘉隆","清水宗治","前田利家","前田利家",R.drawable.maedakamon),
+        QuizData("","柴田勝家","上杉謙信","大友宗麟","柴田勝家",R.drawable.shibatakamon),
+        QuizData("","今川義元","池田恒興","加藤清正","池田恒興",R.drawable.ikedakamon),
+        QuizData("","小西行長","京極高次","毛利輝元","毛利輝元",R.drawable.mourikamon)
     )
 
     val shuffledLists: List<QuizData> = quizLists.shuffled()
@@ -113,7 +113,12 @@ class QuizActivity2 : AppCompatActivity() {
 
             correctAnswer = question.answer
 
-            kamonImage.setImageResource(question.image)
+            if(question.image != null) {
+                kamonImage.isVisible = true
+                kamonImage.setImageResource(question.image)
+            }else{
+                kamonImage.isVisible = false
+            }
 
             quizText.setText("これは誰の家紋？")
 

@@ -24,11 +24,11 @@ import kotlinx.android.synthetic.main.activity_quiz6.secondText as secondText1
 class QuizActivity : AppCompatActivity() {
 
     val quizLists: List<QuizData> = listOf(
-        QuizData("武田信玄", "明智光秀", "北条氏政","武田信玄", R.drawable.takedakamon),
-        QuizData("織田信長", "石田三成", "井伊直政","石田三成", R.drawable.ishidakamon),
-        QuizData("徳川家康", "豊臣秀吉", "毛利輝元","豊臣秀吉", R.drawable.toyotomikamon),
-        QuizData("真田昌幸", "伊達政宗", "斎藤道三","真田昌幸", R.drawable.sanadakamon),
-        QuizData("上杉謙信", "浅井長政", "島津義久","島津義久", R.drawable.shimazukamon)
+        QuizData("","武田信玄", "明智光秀", "北条氏政","武田信玄", R.drawable.takedakamon),
+        QuizData("","織田信長", "石田三成", "井伊直政","石田三成", R.drawable.ishidakamon),
+        QuizData("","徳川家康", "豊臣秀吉", "毛利輝元","豊臣秀吉", R.drawable.toyotomikamon),
+        QuizData("","真田昌幸", "伊達政宗", "斎藤道三","真田昌幸", R.drawable.sanadakamon),
+        QuizData("","上杉謙信", "浅井長政", "島津義久","島津義久", R.drawable.shimazukamon)
     )
 
     val shuffledLists: List<QuizData> = quizLists.shuffled()
